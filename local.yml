@@ -1,0 +1,21 @@
+version : '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - .:/code
+    env_file:
+      - ./.env/.local/.django
+    ports:
+      - "8000:8000"
+    command: python ./pvd/manage.py runserver 0.0.0.0:8000
+  db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - ./.env/.local/.mysql
