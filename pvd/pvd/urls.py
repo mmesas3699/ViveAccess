@@ -21,4 +21,5 @@ urlpatterns = [
 
     path('api/', include(('access.urls', 'access'), namespace='access')),
     
+    path('', include(('frontend.urls', 'frontend'), namespace='frontend'))
 ]

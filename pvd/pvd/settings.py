@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'users.apps.UsersConfig',
     'access.apps.AccessConfig',
+    'frontend.apps.FrontendConfig'
 ]
 
 MIDDLEWARE = [
